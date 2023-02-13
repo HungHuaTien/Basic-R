@@ -1,0 +1,714 @@
+# Posit Cloud使用
+
+進入大數據、人工智慧的時代，程式語言是進行數據分析必備的利器。
+
+## R簡介
+
+### R語言與R軟體
+
+1. **用R軟體學R語言**
+
+- **R語言**源自於S語言，是基於Fortran語言所開發的一種程式語言。第一個版本在1976-1980進行開發。1980 年將S語言移植到 Unix系統， 並對外發佈原始程式碼，1984 年授權原始程式碼。這個舊S的版本和現在用的S語言有所差別。現在所用的S語言始於1989–1988開發的第二個版本，以及1992年開發的第三版，增強物件導向的特性與統計建模功能，是我們現在最常使用的版本。雖然1998年改進了程式設計功能，變成第四版的S語言。不過，並沒有廣泛地被採用，僅用於S語言的商業化S-PLUS上。 
+
+- **R軟體**是一個自由軟體，最初由紐西蘭 Auckland 大學的 Ross Ihaka 和 Robert Gentleman 於 1997 年發佈。因為兩個人的名字都以R開頭，所以命名為“R”，到目前為止，R軟體仍然是經濟系做數據分析的首選！
+
+- [Wiki - R] (https://zh.wikipedia.org/wiki/R%E8%AF%AD%E8%A8%80)
+
+
+
+2. **水果刀與瑞士刀**
+
+- R，一種程式語言與自由軟體，由統計學家所研發，主要用於統計分析、統計繪圖、資料處理。
+
+R is a programming language and free software environment for statistical computing and graphics.
+
+- Python是一種廣泛使用的直譯式、通用目的的高階程式語言。
+
+Python is an interpreted high-level general-purpose programming language.
+
+![](./Figures/StatisticalPrograms.png)
+
+![](./Figures/Popularity.png)
+
+[Python vs. R for Data Science : What’s the Difference?](https://www.datacamp.com/community/blog/when-to-use-python-or-r?fbclid=IwAR3c60NxwH3x2FTe2JYdxip_UhfdaEYOoxL_feTdUN78PRh4neu1v3cWjO4)
+
+
+### 下載與安裝
+
+1. **下載R軟體**
+
+<img src="./Figures/CRAN-1.png" style="zoom: 25%;" />
+
+(1) 前往 The Comprehensive R Archive Network (CRAN)
+
+[官網網址](https://cran.r-project.org/)： <https://cran.r-project.org/>。
+
+(2)可以直接利用雲端[0-Cloud]中的地址，或離自己最近的台灣的鏡像下載<https://cran.csie.ntu.edu.tw/>。
+
+(3) 如果作業系統是 Mac 請點選 Download R for (Mac) OS X；
+
+如果作業系統是 Windows 請點選 Download R for Windows。
+
+<img src="./Figures/CRAN-2.png" style="zoom:33%;" />
+
+- 以Windows為例， 下載 R 軟體安裝檔 **base套件**。
+
+<img src="./Figures/CRAN-3.png" style="zoom: 25%;" />
+
+
+**補充說明：base R 大套件**
+
+-整個R系統是由一系列的套件（Package）所組成(別人寫好的程式，可以直接使用)。
+
+- R軟體自帶的大套件是base R套件，由25個（核心）套件所組成，本身具備完整的分析功能。要用R軟體進行分析，建議先學會base套件的基礎功能。除此之外，CRAN上還有上萬個附加套件，由R核心開發團隊之外的用戶自行研發，如此多的套件讓R幾乎可以實現目前所有的統計分析。
+
+- tidyverse套件是數據分析常用的另一個大套件。
+
+- 大一和大二以base R套件為主，學習R語言的基本功能；大三則是以tidyverse R套件為主，主要教授資料視覺化、資料整理。
+
+
+
+2. **安裝R軟體**
+
+[參考：安裝影片](https://www.youtube.com/watch?v=Viteqr5DLWo)
+
+下載完畢之後執行安裝檔，依照提示訊息點選確認或下一步就能完成安裝；由於現在多數電腦都已經為 64位元，建議不需要勾選安裝 32 位元的檔案。
+
+**補充說明: Windows系統的使用建議 **
+
+建議 1：安裝或使用時，可以系統管理員身份進行。
+
+建議 2：不要設定中文使用者名稱。
+
+若是用中文使用者名稱，日後在RStudio安裝套件會有問題。解決的方式有幾個：
+
+- 新增使用者，使用者名稱用英文。可參考：https://reurl.cc/m3jyoY
+- 改用陽春的R軟體安裝套件。
+- 將R/Rstuio安裝在D槽。
+- 也可以照下面方式修改
+    - 右鍵**我的電腦** -> 屬性 -> 高級系統設置 -> 高級 -> 環境變數
+    - 把TEMP和TMP都修改為，C:\TEMP
+    - 在C目錄下創建資料夾TEMP
+    - 重啟Rstudio
+
+建議 3：不要安裝在 Windows 的 OneDrive 資料夾。
+
+若同學想要安裝onedrive，請在最初安裝onedrive時，不要選擇onedrive與文件夾(documents)同步，就不會有問題。
+
+建議4: 將錯誤訊息的提示改成英文的，方便日後在網路上發問。
+
+![](./Figures/English.png)
+
+建議 5: R軟體一年更新四次，Windows系統不會自動覆蓋舊版的R語言，可以下載`installr`套件，用於更新R軟體。
+
+
+## R Studio軟體
+
+### 整合開發環境
+
+1. **整合開發環境（Integrated Development Environment，簡稱IDE)**，是一種輔助程式開發的應用軟體，通常包含文字編輯器（撰寫程式）、直譯器（翻成0/1的機器碼）與除錯器（找出程式的錯誤）等工具。
+
+
+2. **RStudio軟體**讓我們編寫R程式時更為方便。
+
+在日常工作中，通常不直接使用R軟體自帶的RGui工具進行數據分析，而是使用Rstudio軟體工作。Rstudio是為R語言所設計的一種整合開發環境，支持Linux, macOS, Windows等操作系統，2011年發佈第一個公開測試版，2016年推出第一個正式版本，並陸續更新。
+
+- [Wiki - Rstudio](https://zh.wikipedia.org/wiki/RStudio)
+
+
+
+### 下載與安裝
+
+3. 下載RStudio軟體
+
+[RStudio官網下載：](https://rstudio.com/products/rstudio/download/)<https://rstudio.com/products/rstudio/download/>
+
+前往Download RStudio，如果使用的作業系統是 Mac 請點選 RStudio X.X.XXX - Mac OS X XX.X+ ，如果使用的作業系統是 Windows 請點選 RStudio X.X.XXX - Windows Vista/7/8/10。請安裝64bit即可。
+
+依照圖中紅色方框點選連結下載RStudio軟體。
+
+- 下載 Mac的 RStudio 安裝檔
+- 下載 Windows 的RStudio安裝檔
+
+<img src="./Figures/RStudio.png" style="zoom: 25%;" />
+
+4. **安裝RStudio軟體**
+
+下載完畢之後執行安裝檔，依照提示訊息點選確認或下一步就能完成安裝。
+
+[參考：安裝影片](https://www.youtube.com/watch?v=5Ms94m9RqK4)
+
+### RStudio的使用：四個區塊
+
+Rstudio是目前市佔率最高的Ｒ語言開發工作環境。
+
+**開啟RStudio**
+
+1. 第一次執行 RSudio 時，如下圖顯示三個區塊。
+
+<img src="./Figures/RStudio-1.png" style="zoom: 33%;" />
+
+2. 在畫面的左上角有一個開啟新文件的 icon，請按RScript，開啟一個新的文件檔 編寫R程式。
+
+File => New File => RScript
+
+<img src="./Figures/RStudio-2.jpg" style="zoom: 33%;" />
+
+3.  此時，畫面變成四個區塊，這是Rstudio使用中最常見的樣貌。
+
+
+<img src="./Figures/RStudio-3.jpg"  style="zoom: 67%;" />
+
+**RStudio四區塊簡介**
+
++ 命令列 Console (左下角，命令執行窗口)
+
++ 來源 Source (左上角，代碼編輯窗口)
+
++ 環境管理窗口 Environment、History (右上角，物件暫存區、變數瀏覽窗口)
+
++ 文件管理窗口 Files、Plots、Packages、Help、Viewer (右上角，其他功能)
+
+
+1. **命令列（Console）**：位於左下角，是執行程式的區塊，為命令執行窗口。
+
+- R Console負責執行代碼並顯示程式執行的結果，不管是失敗或成功都會在此顯示。
+
+
+2. **來源（Source）**：位於左上角，是編寫程式代碼的區塊，為腳本編輯窗口。
+
+- 使用正規腳本模式撰寫程式碼，請開啟 RScript檔案（副檔名為.R)。
+
+3. **環境管理窗口**：位於右上角，記憶體內的物件，為物件暫存區、變數瀏覽窗口。
+
+- 環境（Environment）：變數清單。用于顯示內存中已經生成的變數。
+- 歷史（History）：指令執行記錄。按掃帚圖示，可清除歷史的操作步驟紀錄。
+- 查詢（Help）：顯示查詢文件。（請移到環境管理窗口，使用更方便）
+
+
+4. **文件管理窗口**：位於右下角，可以直接點擊代碼或者文本文件，並在窗口中對其進行修改。
+
+- 檔案（Files）：目前工作目錄下的檔案，方便讀取與處理。
+	- 查看目前專案計畫下的檔案名稱。
+- 圖形（Plots）：顯示畫好的圖表。
+	- 圖形繪製是數據分析過程中的必要操作，一款好的數據分析工具，必須具備圖形繪製功能。
+	- RStudio集成了圖形繪製的功能，只需執行繪圖代碼，圖形展示窗口就會繪製出相應的數據圖形。
+	- 有時還是需要到原始R軟體中執行才行。
+- 套件（Packages）：套件清單與安裝。
+- 預覽器（Viewer）：顯示網頁。
+
+
+＝> 本課程將使用雲端系統，雲端的RStudio和桌機下載的RStudio，在使用上幾乎相同，因此請同學參考後面講義的相關操作。
+
+## Posit Cloud 簡介
+
+RStudio公司為R語言提供了方便的操作介面，此整合開發環境稱為RStudio軟體，可以免費直接下載，Mac和Windows作業系統都可以使用。由於這兩個作業系統，在操作細節上有所不同，甚至於同一個作業系統，也會因為電腦配備和軟體版本不同而不完全相容，會發生在A電腦可以成功操作，但在B電腦不行的情況（Python也一樣）。因此，RStudio公司在雲端設立了RStudio Cloud讓R軟體的使用者，利用RStudio公司的統一設備與畫面進行操作，大大降低了系統差異所造成的困擾，就如同Google公司建立的Colab讓人使用Python一樣。只是Google是一間大公司，RStudio是一間小公司，在使用優惠上有所差距，RStudio可免費使用的時間是一個月25小時。因此，建議同學可用兩個Email註冊，或者是搭配桌機使用。
+
+又，R和Python是目前數據分析最常被使用的兩種程式語言。使用Python進行數據分析的人數大增，2022年RStudio公司決定擴大服務範圍，將Python納入，改名為Posit。也因此，R Studio Cloud改名為Posit Cloud，原本RStudio公司所推出的R語言套件，慢慢地都朝著R和Python二者都可以使用的方向前進。
+
+
+### Posit Cloud
+
+1. Posit Cloud 網址：https：//posit.cloud
+
+<img src="./Figures/Posit-1.jpg" style="zoom: 33%;" />
+
+
+2. 註冊(sign up) 或登入(log in)
+
+請輸入你的電子郵件，先註冊，以後均是登入。
+
+<img src="./Figures/Posit-2.png" style="zoom:33%;" />
+
+<img src="./Figures/Posit-3.png" style="zoom:33%;" />
+
+<img src="./Figures/Posit-4.png" style="zoom:33%;" />
+
+
+3. 點擊New Project來新建Project
+
+project是RStudio Cloud的基本工作單位，用來儲存R代碼、R套件及資料。
+
+<img src="./Figures/Posit-5.png" style="zoom:33%;" />
+
+**範例1：建立一個自己的專案管理檔案，將上課的講義、資料與程式等檔案都放在一起，並置於特定的專案（子目錄）之中，例如BasicR。**
+
+<img src="./Figures/Posit-6.png" style="zoom:33%;" />
+
+專案計畫可用相對路徑存取檔案。通常，專案計畫是針對特定用途，有系統的將相關檔案存放在一起，可用相對路徑存取檔案。Posit Cloud是用這種比較先進的方式操作。又，目前大部分的統計軟體則是以工作目錄的方式提供類似的功能，在RStudio的桌機版，則是二者均提供。
+
+### Posit/Rstudio四區塊的外觀設定
+
+雲端和桌機的使用畫面非常類似，請將先將Posit變成四個視窗區塊，然後進行外觀設定。
+
+- 四個區塊：File => New File => RScript
+
+- 外觀設定：Tools -> Global Options中的選項，請自己依照需要調整測試
+    - Code: 關閉代碼提示功能，在Completions中的Show Code Completions選Manually。
+    - Code:編碼，在Saving的Default text encoding中，選UTF-8。
+    - Appearance：可以調整字體、字體大小、Workspace 與 Console 的 theme。
+    - Pane Layout：調整開啟畫面的左上、左下、右上、右下的內容，可以自動調整。（可將help移到環境管理窗口）
+
+## 常用功能
+
+桌機和雲端常用操作功能均相同
+
+![](./Figures/RStudio-4.jpg)
+
+
+### 兩種使用模式（左邊區塊）
+
+RStudio/Posit有兩種常見的使用模式：互動模式與正規模式。
+
+**模式一：互動模式（Interactive Mode）** （左下方區塊）
+
+1. R是直譯式語言。
+
+啟動 R 軟體後進入命令列介面後，可以直接在命令列執行程式指令，然後觀看結果。
+
+- **打完代碼後，請按`Enter`執行**。
+- **可用`ctrl+L`清空命令列。**
+
+範例2: 請在控制台執行下面代碼
+
+```{r}
+5
+1 + 1
+print(2 + 2)
+print("Hello World")
+```
+
+2. 控制台執行視窗(Console)中的符號
+
+- 若視窗出現**`>`**時，表示可輸入指令；
+- 若視窗出現**`+`**時，表示前面的程式碼還沒打完，必須鍵入完整的程式碼讓R執行。
+- 可以用**上下左右游標鍵**查找歷史命令、修改後再次執行。
+  - 或用`Ctrl+C 複製`、用`Ctrl+V 貼`
+
+
+**模式二: 正規模式（Normal Mode）- 腳本、命令稿** （左上方區塊）
+
+
+1. 用文字編輯器撰寫並儲存程式。
+
+程式檔案稱為腳本、命令稿(script)， R語言腳本檔案的附檔名是".r"。
+
+- Step1: 在 RStudio 中，建立一個來源程式檔（指令檔）。
+	- 用File => New File => R Script
+	- 或點選`+`號，開啟一個新的 R script 檔案(.r)
+- Step2: 在左上方，程式碼編輯區 Source editor撰寫程式碼
+	- 程式編輯允許同時打開多個文件進行編輯
+	- 但是每次只能編輯一個文件\
+	- 單擊窗口上面的文件名稱，可以切換編輯文件。
+
+2. 用直譯器將R指令分譯成電腦懂的0與1語言。
+
+- Step3: 邊寫程式、邊測試。
+	- 先用滑鼠標出欲執行的程式碼(Highlight)
+	- 按`快捷鍵Ctrl+Enter`或單擊`Run`，執行選定的程式碼
+	- 程式碼會在左下方Console視窗執行，並顯示結果
+	- 寫完一部分就運行一部分，沒有錯誤才繼續寫下一部分。
+	- 為了閱讀方便，請用`井字號#`加上註解。
+	- 單擊`Source`按鈕，則執行整個程式檔代碼。
+
+- Step 4: 儲存檔案。
+	- 整個程式寫完後，從頭到尾執行R腳本上的程式，確認正確無誤。
+	- 指令為`source("filename.r", encoding = "UTF-8")`。
+	- 儲存程式檔案、儲存執行檔案。
+
+範例3: 請在來源撰寫程式檔案並執行。
+
+```{r}
+## 實際操作一次，檔名test.r
+## 整行加註時，用兩個井字號開頭；指令後加註，用一個井字號。
+## 指派與四則運算子前後建議空一格，逗號後面亦要空一格。
+
+## R as a calculator
+print(1+1)    # 加法運算子
+print(sqrt(2))  # 函數
+```
+
+3. 錯誤訊息
+
+- 用RStudio寫程式的一個好處是可以預先知道程式有錯誤的地方。
+	- 指令稿會以紅色波浪線和側邊欄的交叉圖示凸顯語法有錯的地方
+	- 指令稿會以驚嘆號發出警告。
+	- 請將滑鼠移到交叉或驚嘆號圖示的地方，看看發生了什麼問題。
+
+- 用直譯器執行後，可以從Console看執行結果。
+	- Message：有可能的錯誤通知，程式會繼續執行
+	- Warning：有錯誤，但是不會影響太多，程式會繼續執行
+	- Error：有錯，而且無法繼續執行程式
+	- Condition：可能會發生的情況
+
+4. **常用的快速鍵**
+
+- 剪下：ctrl+X
+- 複製：ctrl+C
+- 貼上：ctrl+V
+- 全選：ctrl+A
+- 清除：ctrl+L
+- 執行：ctrl+Enter
+- 存檔：ctrl+S
+- 上一步：ctrl+Z
+
+5. **文書處理**
+
+＝>若程式執行沒有任何問題，要將程式與執行結果一併輸出，進行文書處理。此時，請按菜單最旁邊的筆記本，RStudio會替你進行簡單的編譯工作，等高年級時再學自行設計的細節。
+
+- 進行程式檔案的編譯(Compile)，即文書處理作業，請選擇Word檔。
+	- 雲端編譯好的Word檔，會存在雲端(OK)，也可以直接下載(Download)。
+	- 桌機則是會直接開啟編譯好的Word檔。
+
+<img src="./Figures/Posit-7.png" style="zoom:33%;" />
+<img src="./Figures/Posit-8.png" style="zoom:33%;" />
+<img src="./Figures/Posit-9.png" style="zoom:33%;" />
+
+### 右邊區的常用功能
+
+**1. 檔案與上傳下載（右下方區塊）**
+
+- 檔案是指在專案計畫工作目錄中的檔案
+	- 在雲端，全都使用相對路徑，即只用檔名即可。
+	- 在雲端，通過upload和export，可以上傳和下載檔案。
+
+<img src="./Figures/Posit-12.png" style="zoom: 33%;" />
+
+<img src="./Figures/Posit-13.png" style="zoom: 33%;"/>
+
+
+**2.套件的使用 （右下方區塊）**
+
+套件是由R函數、數據和欲編譯代碼等檔案所組成，是別人替你寫好的完整功能檔案集。儲存R套件的資料夾稱為庫(Library)。
+
+通常，**使用套件的程序有兩個階段，一個是安裝，另外一個是載入。**這兩者的區別就像是買書跟閱讀書，安裝套件就像是把書買回家裡放在書櫃中，書只需買一次、套件也只需下載一次即可；載入套件就像是把書從書櫃取下閱讀，書可以看很多次、需要套件時也可以多次載入使用。
+
+**步驟一:安裝套件**
+
++ **在文件管理視窗(Rstudio右下視窗)用按的**
+    - Packages -> Install Packages 安裝套件
+    - 鍵入套件名稱
+    - 勾"Install dependencies"
++ 直接在 Console 輸入指令安裝
+    - 在R軟件中安裝套件，需要在連接互聯網的前提下進行。
+    - 使用`install.packages`函數安裝套件。
+    	- 將套件的名稱作為第一個參數傳入函數中，然後執行代碼，即可安裝該套件。
+    	- 即`install.packages("套件名稱")`
+    	- 加入選項`dependencies = TRUE`，可一同下載相關套件。
+    	- 加入鏡像的選項`options(repos = "http://cran.csie.ntu.edu.tw/")`。
+- 永遠不要在指令稿中出現`install.packages()`，或`remove.packages()`，或`setwd()`指令。
+	- 因此，建議使用滑鼠點選操作。
+
+**步驟二:載入套件**
+
++ 透過文件管理視窗的 Package，將要載入的 package 打勾即可。
++ **在 console 輸入指令載入，指令為`library(套件名稱)`。**
+	+ 在指令稿一開始的地方，用`library()`指令放上你要載入的套件
+	+ 例如：`library(ggplot2) # ggplot2 一個畫圖套件`。
+	+ 導入套件後，可以直接通過函數名稱使用套件內的函數。
++ require()函數也可以載入套件(Optional)。
+	+ 當載入的套件不存在時，library()會發生錯誤而停止執行， require() 不會。
+	+ 例如：`require(ggplot2)`
+
+注意，不同Project之間是完全獨立的，所以R套件並非共用。新建project需要重新安裝R套件，因此可以考慮使用同一個Project，減少安裝套件的麻煩。
+
+
+**(Optional)例：試看看同時安裝數個套件套件，查看套件安裝路徑、然後謝在、移除。**
+
+```
+## 安裝多個套件
+options(repos="http://cran.csie.ntu.edu.tw") # 指定repositories
+pks <- c("rgl", "ggplot2", "maps", "e1071")
+# install.packages(pks)
+
+## 查詢套件安裝路徑
+.libPaths()
+
+library() # 列出安裝套件的目錄
+
+# 卸載、移除與查看
+# install.packages("rgl")
+# library(rgl)
+# detach("package:rgl", unload = TRUE) # 卸載套件
+# remove.packages("rgl") # 移除套件
+# install.packages("Rcmdr", dependencies = TRUE)
+```
+
+如果套件是發佈在 Github 上，而不是發佈在 CRAN 上，則可以利用 devtools package 實作此部份。
+
+**(Optional)例：試看看安裝rsthemes套件提供的套件，套件在github、不在CRAN上。**
+
+```
+# install.packages("devtools")
+devtools::install_github("gadenbuie/rsthemes")
+
+rsthemes::install_rsthemes()
+# list installed themes
+rsthemes::list_rsthemes()
+# Use a theme
+rstudioapi::applyTheme("One Dark {rsthemes}")
+```
+
+**3. 線上求助 (右上方區塊)**
+
+- 線上求助系統可從右下方區塊，移到右上方區塊。
+- R語言的線上求助系統完整，是學習的好幫手，但英文閱讀是門檻。**
+
+**4. 環境與歷史(右上方區塊)**
+
+顯示所有在記憶體中的物件，但只會列出物件名稱。
+
+**5.分享專案**
+
+預設情況下，你創建的任何Project都只能自己訪問。若要分享，得更改設定。
+
+<img src="./Figures/Posit-10.png" style="zoom: 33%;" />
+
+- 先在設定中，將“誰可以查看該項目”更改為“所有人”(右上角的齒輪)。
+	- 在流覽器中複製專案位址並發送連結。
+	- 注意，任何有連結的使用者都可以查看你的項目。
+	- 當你訪問由其他人創建的項目時，Posit Cloud會自動創建原始專案的臨時副本。你可以使用它並對其進行編輯，但是任何更改都不會反映在原始版本中。
+	- 如果你想保留所做的更改，只需按下save a Permanent copy按鈕為自己保存一個專案的副本。
+- 若要與他人共用一個專案，則要按一下專案設置按鈕(右上角的圓圈三點)。
+
+### 離開 RStudio/Posit
+
+**兩種離開的方式**
+
+(1) 點擊視窗的 X 離開，或(2)在命令列（Console）輸入 `q()` 離開。
+
+- 離開時候會詢問是否要儲存您的工作空間，如果您希望下一次啟動時保有目前環境中的物件，可以選擇儲存工作空間。
+	- 儲存工作空間：結束工作時，可以考慮儲存工作空間，save.image (filename.RData)
+	- 儲存工作物件：將物件名稱為XXX的特定物件，儲存到RData附加檔名的yyy檔案 save (XXX, file = “yyy.RData)
+	- 載入工作目錄：load(filename.RData)
+
+
+
+**Summary:常用的工作空間指令整理 **
+
+| 命令 | 功能     |
+| ---- | ---- |
+| getwd()| 顯示當前的工作目錄|
+| setwd()| 修改當前的工作目錄|
+| ls()|列出當前工作空間中的物件|
+| rm(objectList) |移除（刪除）一個或多個物件|
+|rm(list=ls()) |移除當前工作空間的所有物件，即清除R工作空間中的內存變量|
+| help(options)|顯示可用選項的說明|
+| options()|顯示或設置當前選項|
+| history()|顯示最近使用過的n個命令|
+| savehistory("myfile")|保存命令歷史文件到myfile中|
+| loadhistory("myfile") |載入一個命令歷史文件|
+| save.image("myfile") |保存工作空間到文件myfile中|
+| save(objectlist, file = "myfile")|保存指定物件到一個文件中|
+| load("myfile") |讀取一個工作空間到當前會話中|
+| q()|退出R，會詢問是否保留工作空間|
+
+
+**參考連結**
+
+[An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+
+[R-Bloggers](https://www.r-bloggers.com/)
+
+[R-Seek Search Engine](https://rseek.org/?fbclid=IwAR2re4xmqviiB4mBrQQ9Ckd81ayLjrHF9mJWEudYE-sOIx0VAC1BZzt0SiA)
+
+[RStudio Cheatsheets](https://rstudio.com/resources/cheatsheets/)
+
+[Find Economic Articles with Data](https://ejd.econ.mathematik.uni-ulm.de/?fbclid=IwAR3pbL-Fze_B8TWckpMvxRlsNZC8dCszUjWoSzNuRBw8N-MPRk1wWYZE0z4)
+
+
+## 補充說明
+
+1. 工作目錄與專案計畫
+
+**(1)桌機需設定工作目錄，方便檔案使用**
+
+使用RStudio時，若設定工作目錄，則在你載入或儲存檔案時，R會直接到工作目錄中對檔案進行處理，所以只需檔案的相對路徑即可，不用檔案的絕對路徑。
+
+- 工作目錄（Working directory）
+在此目錄之下的檔案，可用相對路徑檔名而不必用絕對路徑檔名存取檔案。
+- 使用檔案時要給檔案位置的路徑(path)，而路徑分成絕對路徑與相對路徑。
+	- 路徑寫法：**在R中請用正斜線、路徑用雙引號。**
+	- 絕對路徑："C:/Users/bigfl/Desktop/test.r"
+	- 相對路徑："test.r"
+- 一旦設定工作目錄，尋找與存放檔案都只需使用相對路徑即可。
+- 在主控台頂端的最右邊，Rstudio會顯示目前的工作目錄。
+
+**查看與設定工作路徑**
+
++ 查看工作目錄:** getwd()**
++ 設定工作目錄: **setwd("子目錄絕對路徑")**
+    + 例如setwd("C:/Users/bigfl/Desktop")
+    + 日後建議多用專案管理檔案，少用工作目錄(傳統檔案管理的方式)。
+
+=> 如果工作目錄習慣固定為桌面，可用滑鼠右鍵按RStudio捷徑圖示的「內容」，在「捷徑」之起始位置上，修改成你的桌面位置路徑即可，就不用再做設定了。
+
+<img src="./Figures/start.png" style="zoom: 25%;" />
+
+**(2)專案計畫**
+
+專案計畫和工作目錄二者的功能一樣，可用相對路徑存取檔案。
+通常，工作目錄是暫時存放檔案，方便我們寫程式、處理資料；
+專案計畫則是針對特定用途，有系統的將相關檔案存放在一起。
+大部分的統計軟體都有工作目錄的設計，專案計畫則是更專業進階的作法。
+雲端Posit Cloud直接使用專案計畫。
+
+**範例：建立一個自己的專案管理檔案，將上課的講義、資料與程式等檔案都放在一起，
+並置於特定的子目錄之中，例如C:\SHU。**
+
+- 點選『File』→『New Project…』→『Existing Directory…』。
+- 點選『New Directory』，建立一個新資料夾。
+	- 專案資料夾不要放在桌面。（可將工作目錄設為桌面）
+- 專案形態選擇『R Package』。
+- 點選『Create Project』則完成新增一個套件專案。
+	- 套件名稱請自行命名，並新增套件的位置。
+	- 所有檔案都在同一個資料夾中。
+	- 「專案名稱.Rproj」。
+- 新增後則可看到File區塊顯示本專案內的檔案清單。
+- 日後要使用上課相關的資料與檔案，進入時Rstudio後，`請點選『File』→『Open Project…』開啟`。
+	- 若開啟檔案時有亂碼，用Open With Encoding修正之。
+	- 「Ctrl+Enter」執行程式。
+	- 「Ctrl+S」儲存檔案。
+
+<img src="./Figures/project.png" style="zoom: 25%;" />
+
+2.：線上求助
+
+**R語言的線上求助系統完整，是學習的好幫手，英文閱讀是門檻。桌機與雲端皆可使用。**
+
+(1)幫助文件
+
+**R語言提供大量的幫助文件。**
+
+- R語言的內置幫助系統提供了當前已安裝的R套件中所有函數的描述、使用方法、參數介紹、函數細節及相關的函數例子。如果學會使用這些幫助文件，有助於正確使用各種函數，提高程式設計編寫能力。
+- 查閱幫助文件，除了可以幫助使用者避免很多不必要的死記硬背，還可以讓使用者從中學習到更多的使用方法。
+
+**幫助頁面**
+
+一般而言，第一行會顯示某函數或操作命令的所屬的套件(package)，然後是標題，標題下面是則是一些詳細信息。
+
+<img src="./Figures/help.png" style="zoom:25%;" />
+
+大部分的幫助文件包含以下內容的前三條，其他內容常見但不是必須的。
+
+- **Description**（說明部分）: brief description. 有關操作的簡要說明
+- **Usage**（用法部分）: for a function, gives the name with all its arguments and the possible options (with the corresponding default values); for an operator gives the typical use.說明在控制台應用函數的形式，包括參數的默認順序和默認值）
+- **Arguments**（參數部分）: for a function, details each of its arguments. 說明參數的作用以及它們定義域的說明。
+- **Details**（詳細信息）: detailed description.更詳細的解釋。
+- **Value**（數值部分）: if applicable, the type of object returned by the function or the operator. 函數返回物件的性質。
+- **See Also**（參閱部分）: other help pages close or similar to the present one. 相關功能的幫助文件。
+- **Examples**（示例部分）: some examples which can generally be executed without opening the help with the function example. 提供可執行代碼。我們可以將其複製貼到控制台，來演示這些功能。
+
+初學者看幫助文件內容時，或許會覺得非常專業，不容易理解，但最好還是繼續查看幫助文件，養成這個習慣，好能瞭解這一個函數的工作原理。對初學者而言，參考説明中Examples部分的資訊是很有用的，而仔細閱讀Arguments中的說明是非常有必要的。有時説明中還會包含了其它一些資訊，如Note, References或Author(s)等。
+
+(2)如何查看幫助文件
+
+**知套件、知函數 - help()函數**
+
+知道某個函數的具體名稱和所屬套件，但不記得該函數的具體用法時，請用help()函數或單問號查詢。
+
+```{r}
+help(lda, package = "MASS")
+?lda
+```
+
+**不知套件、知函數 - help.search()函數**
+
+記得函數的名稱，但不記得該函數屬於哪一個套件時，如果直接使用help()函數或單問號查詢，並無法返回該函數的幫助文件。此時，可以使用help.search()函數或者是雙問號查詢。
+
+```{r}
+help.search('dbscan')
+?? dbacan
+```
+
+**知套件、不知函數 - apropos()函數**
+
+如果曾經下載過套件並使用過當中的某個函數，但不記得該函數的名字時，前面的help()函數和help.search()函數均無法進行查詢。此時，可用apeopos()函數，它是根據正則表達式從已加載的套件中搜尋出滿足匹配條件的函數。
+
+```{R}
+library(lmtest)
+library(car)
+apropos("test") #找出含test字樣的函數
+```
+
+**不知套件、不知函數 - RSiteSearch()函數**
+
+套件和函數名稱都不知道的時候，請用RSiteSearch()函數在專屬的R語言網站在線搜尋。此時，搜索出來的答案與網址是根據評分降序排列的，越靠前面的很可能會越接近你要的答案。若關鍵字比較多的時候，很可能返回時要再次搜索。
+
+```{r}
+RSiteSearch("Hosmer-Lemeshow")
+```
+也可以直接利用這個網址做同樣的查詢：https://search.r-project.org/
+
+=> Summary：常用指令
+
+| 命令                 | 功能                                           |
+| --------------------| ------------------------------------------ |
+| help.start()        | 打開幫助文件                                |
+| help("plot")        | 查看plot函數的幫助                           |
+| help.search("plot")  | 以plot為關鍵詞搜索本地幫助文檔                 |
+| example("plot")      | plot函數的使用示例                             |
+| RSiteSearch("plot")  | 以plot為關鍵詞搜索在線文檔和郵件咧表存檔       |
+| apropos("plot", mode = "function") | 列出名稱中含有plot的所有可用函數    |
+| data()                | 列出當前已加載套件中所含的所有可用示例數據文檔 |
+| vignette()            | 列出當前已經安裝的套件中所有可能的vignette文檔 |
+| vignette("plot")      | 為主題plot顯示指定的vignette文檔               |
+
+除此之外，**Stack Overflow**中也有許多問答，可直接在網站中搜尋關鍵字與錯誤訊息。如果找不到解答，發問時請附上可以重現錯誤的程式碼與資料，以及系統/套件的版本資訊。
+
+**經驗分享：**我自己通常是在google中，先打r，然後打我認為的關鍵字，有時是把rstudio給的錯誤訊息，整段貼上，看看能找到什麼東西來解決問題。
+
+**3. 補充說明：使用R與Python(Optional)**
+
+- R Colab
+	- RColab網址： colab.to/r
+	- 在 colab 環境下
+	- 點選上列中的「執行階段」→「變更執行階段類型」→「執行階段類型」- R。
+
+- 在RStudio Run Python**
+
+ ````
+# 安装
+install.packages("reticulate")
+# 匯入
+library(reticulate)
+# 導入 python 的模組，使用當中的函數
+os <- import("os")
+os$listdir(".")
+# 測試 python
+py_available()
+
+# 建立環境
+conda_create("r-reticulate")
+# 在 conda 下安装 "r-reticulate" 和 "numpy"
+conda_install("r-reticulate","numpy")
+
+# 匯入 python 的套件
+numpy <- import("numpy")
+# 測試與使用 numpy
+y <- array(1:4, c(2, 2))
+x <- numpy$array(y)
+x
+
+# 轉置資料
+numpy$transpose(x)
+# 求特徵值和特徵向量
+numpy$linalg$eig(x)
+# 使用數學函數
+numpy$sqrt(x)
+numpy$exp(x)
+
+# R 與 Python 交互使用
+repl_python()
+
+dx = 1
+area = 0
+y = 0
+for x in range( 200, 500, dx):
+    x = x/100
+    y = (x**2) + 1
+    area = area + (y * (dx/100))
+print('area = ', area)
+
+exit
+````

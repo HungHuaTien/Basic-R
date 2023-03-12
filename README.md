@@ -14,7 +14,10 @@
   - 上課講義與個人作業題目，已置於檔案區塊中，請自行使用
 - 課程錄影：  
 - MS Teams 連結
+https://teams.microsoft.com/l/meetup-join/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/1678660716763?context=%7b%22Tid%22%3a%224a28fc97-b766-4520-8a32-79999f14dfcb%22%2c%22Oid%22%3a%224591d026-a49a-48f2-ae8b-60c165f16bfe%22%7d
 
+=> 課程團隊連結（請還沒有加入團隊的，先加入課程團隊）
+https://teams.microsoft.com/l/team/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/conversations?groupId=0a3c85ad-84b3-463b-8c6e-cd7ae1071753&tenantId=4a28fc97-b766-4520-8a32-79999f14dfcb
 
 **第四週 2023/03/06 （一）15:10-17:00**
 
@@ -23,8 +26,7 @@
 - 課程錄影：  
   - https://youtu.be/7o94MSOWDRM
   - https://youtu.be/99121bA1ais
-- MS Teams 連結 （請還沒有加入團隊的，先加入課程團隊，課程團隊連結請見上一週）
-https://teams.microsoft.com/l/meetup-join/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/1678660716763?context=%7b%22Tid%22%3a%224a28fc97-b766-4520-8a32-79999f14dfcb%22%2c%22Oid%22%3a%224591d026-a49a-48f2-ae8b-60c165f16bfe%22%7d
+- MS Teams 連結 
 
 **第三週 2023/02/27 （一）15:10-17:00**
 

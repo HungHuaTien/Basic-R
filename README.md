@@ -8,14 +8,23 @@
 
 ## 課程進度與內容
 
+**第五週 2023/03/13 （一）15:10-17:00**
+
+- 進度內容：資料結構-向量、矩陣
+  - 上課講義與個人作業題目，已置於檔案區塊中，請自行使用
+- 課程錄影：  
+- MS Teams 連結
+
+
 **第四週 2023/03/06 （一）15:10-17:00**
 
 - 進度內容：R語言的特性 ＋ 資料結構-向量
   - 上課講義與個人作業題目，已置於檔案區塊中，請自行使用
-- 課程錄影：  https://youtu.be/7o94MSOWDRM
-https://youtu.be/99121bA1ais
-- MS Teams 連結
-
+- 課程錄影：  
+  - https://youtu.be/7o94MSOWDRM
+  - https://youtu.be/99121bA1ais
+- MS Teams 連結 （請還沒有加入團隊的，先加入課程團隊，課程團隊連結請見上一週）
+https://teams.microsoft.com/l/meetup-join/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/1678660716763?context=%7b%22Tid%22%3a%224a28fc97-b766-4520-8a32-79999f14dfcb%22%2c%22Oid%22%3a%224591d026-a49a-48f2-ae8b-60c165f16bfe%22%7d
 
 **第三週 2023/02/27 （一）15:10-17:00**
 
@@ -24,8 +33,9 @@ https://youtu.be/99121bA1ais
 **第二週 2023/02/20 （一）15:10-17:00**
 
 - 進度內容：入門概論-Posit Cloud
-- 課程錄影：https://youtu.be/zG2E_J21NW8
-https://youtu.be/0PmcGNDoE8Y
+- 課程錄影：
+  - https://youtu.be/zG2E_J21NW8
+  - https://youtu.be/0PmcGNDoE8Y
 
 
 **第一週 2023/02/13 （一）15:10-17:00**

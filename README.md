@@ -20,6 +20,11 @@ https://teams.microsoft.com/l/meetup-join/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-db
 => 課程團隊連結（請還沒有加入團隊的，先加入課程團隊）
 https://teams.microsoft.com/l/team/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/conversations?groupId=0a3c85ad-84b3-463b-8c6e-cd7ae1071753&tenantId=4a28fc97-b766-4520-8a32-79999f14dfcb
 
+加分題：同學你可以用建立向量的方式，以及向量的數學運算內容，把下面的這個表格用R語言寫出來嗎 ？
+
+https://reurl.cc/XLmK3E
+
+
 **第四週 2023/03/06 （一）15:10-17:00**
 
 - 進度內容：R語言的特性 ＋ 資料結構-向量

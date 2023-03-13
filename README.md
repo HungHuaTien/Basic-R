@@ -12,7 +12,8 @@
 
 - 進度內容：資料結構-向量、矩陣
   - 上課講義與個人作業題目，已置於檔案區塊中，請自行使用
-- 課程錄影：  
+- 課程錄影： 
+  - https://youtu.be/l_8Xl8aceXU
 - MS Teams 連結
 https://teams.microsoft.com/l/meetup-join/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/1678660716763?context=%7b%22Tid%22%3a%224a28fc97-b766-4520-8a32-79999f14dfcb%22%2c%22Oid%22%3a%224591d026-a49a-48f2-ae8b-60c165f16bfe%22%7d
 

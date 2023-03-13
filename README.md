@@ -15,7 +15,6 @@
 - 課程錄影： 
   - https://youtu.be/l_8Xl8aceXU
 - MS Teams 連結
-https://teams.microsoft.com/l/meetup-join/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/1678660716763?context=%7b%22Tid%22%3a%224a28fc97-b766-4520-8a32-79999f14dfcb%22%2c%22Oid%22%3a%224591d026-a49a-48f2-ae8b-60c165f16bfe%22%7d
 
 => 課程團隊連結（請還沒有加入團隊的，先加入課程團隊）
 https://teams.microsoft.com/l/team/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4Wyk1%40thread.tacv2/conversations?groupId=0a3c85ad-84b3-463b-8c6e-cd7ae1071753&tenantId=4a28fc97-b766-4520-8a32-79999f14dfcb

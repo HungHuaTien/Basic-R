@@ -22,7 +22,9 @@ https://teams.microsoft.com/l/team/19%3aIlTmD7Bk4q2fxDLPAPpuxY2spsyLEa-dbnKSa0h4
 
 加分題：同學你可以用建立向量的方式，以及向量的數學運算內容，把下面的這個表格用R語言寫出來嗎 ？
 
-![Cost Function](https://reurl.cc/XLmK3E)
+
+
+![Cost Function](https://github.com/HungHuaTien/Basic-R/blob/main/%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99/Others/cost.jpg)
 
 
 **第四週 2023/03/06 （一）15:10-17:00**
